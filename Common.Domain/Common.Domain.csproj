@@ -11,9 +11,8 @@
 		<RepositoryType>git</RepositoryType>
 		<PublishRepositoryUrl>true</PublishRepositoryUrl>
     <Configurations>Debug;Release;PreRelease</Configurations>
-		<PackageId>VSLee.IEXSharp</PackageId>
-		<Product>VSLee.IEXSharp</Product>
     <Copyright>2020 Vitalii Maltsev</Copyright>
+    <OutputType>Library</OutputType>
   </PropertyGroup>
 
   <ItemGroup>
