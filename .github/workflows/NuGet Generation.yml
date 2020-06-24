@@ -10,20 +10,19 @@ jobs:
     runs-on: ubuntu-18.04
     name: Update NuGet package
     steps:
-
       - name: Checkout repository
         uses: actions/checkout@v1
 
-      - name: Setup .NET Core @ Latest
+      - name: Setup .NET Core
         uses: actions/setup-dotnet@v1
         with:
-          source-url: https://nuget.pkg.github.com/FacelessHunter/Chat.Common/index.json
+          dotnet-version: '3.1.x'
+          source-url: https://nuget.pkg.github.com/FacelessHunter/index.json
         env:
           NUGET_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}        
 
       - name: Build solution and generate NuGet package
-        run: |  
-          dotnet pack -c Release -o out
+        run: dotnet pack -c Release -o out
 
       - name: Push generated package to GitHub registry
         run: dotnet nuget push ./out/*.nupkg --skip-duplicate
