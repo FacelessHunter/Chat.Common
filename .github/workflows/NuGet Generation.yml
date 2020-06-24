@@ -24,7 +24,7 @@ jobs:
       - run: dotnet build
         
       - name: Build solution and generate NuGet package
-        run: dotnet pack -c Release
+        run: dotnet pack -c Release -
 
       - name: Push generated package to GitHub registry
         run: dotnet nuget push */bin/Release/*.nupkg
