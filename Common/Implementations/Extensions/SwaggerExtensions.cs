@@ -17,10 +17,7 @@ namespace Common.Implementations.Extensions
             {
                 options.SwaggerDoc(swaggerOptions.Version, new OpenApiInfo { Title = swaggerOptions.Title, Version = swaggerOptions.Version });
 
-                var xmlFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
-                var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
-
-                options.IncludeXmlComments(xmlPath);
+                options.IncludeXmlComments(swaggerOptions.PathToXMLDocument);
 
                 options.AddSecurityDefinition("oauth2", new OpenApiSecurityScheme
                 {
