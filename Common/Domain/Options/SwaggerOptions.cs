@@ -13,6 +13,8 @@ namespace Common.Domain.Options
 
         public string UiEndpoint { get; set; }
 
+        public string PathToXMLDocument { get; set; }
+
         public Dictionary<string, string> SwaggerScopes { get; set; }
     }
 }

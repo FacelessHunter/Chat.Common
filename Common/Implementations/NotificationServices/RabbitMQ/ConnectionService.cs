@@ -14,7 +14,7 @@ namespace Common.Implementations.NotificationServices.RabbitMQ
         private IConnection _connection;
         private bool _disposed;
 
-        private object sync_root = new object();
+        private readonly object sync_root = new object();
 
         public ConnectionService(IOptions<RabbitMQOptions> options)
         {

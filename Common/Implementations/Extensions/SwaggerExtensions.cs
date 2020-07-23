@@ -11,16 +11,13 @@ namespace Common.Implementations.Extensions
 {
     public static class SwaggerExtensions
     {
-        public static void AddSwagger(this IServiceCollection services, SwaggerOptions swaggerOptions, OAuthOptions oAuthOptions)
+        public static void AddSwagger(this IServiceCollection services, SwaggerOptions swaggerOptions, OAuthOptions oAuthOptions, string pathToXMLDocument)
         {
             services.AddSwaggerGen(options =>
             {
                 options.SwaggerDoc(swaggerOptions.Version, new OpenApiInfo { Title = swaggerOptions.Title, Version = swaggerOptions.Version });
 
-                var xmlFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
-                var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
-
-                options.IncludeXmlComments(xmlPath);
+                options.IncludeXmlComments(pathToXMLDocument);
 
                 options.AddSecurityDefinition("oauth2", new OpenApiSecurityScheme
                 {
