@@ -1,4 +1,4 @@
-﻿namespace Common.Domain.DTOs
+﻿namespace Common.Domain.DTOs.ChatDTOs
 {
     public class ViewChatDTO : BaseChatDTO
     {

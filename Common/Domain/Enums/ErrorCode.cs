@@ -8,6 +8,12 @@ namespace Common.Domain.Enums
     public enum ErrorCode
     {
 
+        [Description("Invalid ConnectionId")]
+        InvalidConnectionId = 3400,
+
+        [Description("ConnectionId Not Found")]
+        ConnectionIdNotFound = 3404,
+
         [Description("Invalid")]
         Invalid = 2400,
 

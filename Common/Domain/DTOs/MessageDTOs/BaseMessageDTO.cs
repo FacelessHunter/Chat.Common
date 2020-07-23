@@ -1,4 +1,4 @@
-﻿namespace Common.Domain.DTOs
+﻿namespace Common.Domain.DTOs.MessageDTOs
 {
     public class BaseMessageDTO
     {

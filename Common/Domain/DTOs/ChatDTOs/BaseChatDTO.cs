@@ -1,6 +1,6 @@
 ﻿using Common.Domain.Enums;
 
-namespace Common.Domain.DTOs
+namespace Common.Domain.DTOs.ChatDTOs
 {
     public class BaseChatDTO
     {
